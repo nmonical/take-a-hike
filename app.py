@@ -35,28 +35,29 @@ def get_similar(trail, n=5):
     df_sim = df_sim_all[1:n+1]
     return trails[['name','state_name']].iloc[df_sim['tfidf_index']]
 
-#if st.button('Show Hikes'):
- #   hike_name, hike_state = get_similar(selected_trail, n=5)['name'].tolist(), get_similar(selected_trail, n=5)['state_name'].tolist()
-  #  col0, col1, col2, col3, col4, col5 = st.columns(6)
-   # with col0:
-    #    st.text('Name')
-     #   st.text('State')
-    #with col1:
-     #   st.text(hike_name[0])
-      #  st.text(hike_state[0])
-    #with col2:
+if st.button('Show Hikes'):
+    hike_name, hike_state, slug = get_similar(selected_trail, n=5)['name'].tolist(), get_similar(selected_trail, n=5)['state_name'].tolist()
+    col0, col1, col2, col3, col4, col5 = st.columns(6)
+    with col0:
+        st.text('Name')
+        st.text('State')
+    with col1:
+        st.write(hike_name[0]  % "https://alltrails.com/trail/"+slug[0])
+        st.markdown(hike_name[0]  % "https://alltrails.com/trail/"+slug[0])
+        st.text(hike_state[0])
+    with col2:
      #   st.text(hike_name[1])
       #  st.text(hike_state[1])
-    #with col3:
+    with col3:
      #   st.text(hike_name[2])
       #  st.text(hike_state[2])
-    #with col4:
+    with col4:
      #   st.text(hike_name[3])
       #  st.text(hike_state[3])
-    #with col5:
+    with col5:
      #   st.text(hike_name[4])
      #   st.text(hike_state[4])
 
-if st.button('Show Hikes'):
-    st.dataframe(get_similar(selected_trail,5), hide_index=True)
+#if st.button('Show Hikes'):
+ #   st.dataframe(get_similar(selected_trail,5), hide_index=True)
    
