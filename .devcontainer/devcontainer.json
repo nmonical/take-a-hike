@@ -27,6 +27,9 @@
       "onAutoForward": "openPreview"
     }
   },
+  "features": {
+    "ghcr.io/devcontainers/features/git-lfs:1": {}
+},
   "forwardPorts": [
     8501
   ]
