@@ -19,7 +19,7 @@ def get_similar(trail, n=5):
 #idx: target item's index
 
     # 1. compute distance
-    target_feature = similarity[trails['name']==trail.index[0]].reshape(1, -1)
+    target_feature = similarity[trails['name']==trail].reshape(1, -1)
     couple_dist = pairwise_distances(similarity,
                                      target_feature, metric='cosine')
     # 2. get similar dataframe: no need to filter out the first
