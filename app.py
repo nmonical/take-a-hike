@@ -1,4 +1,4 @@
-import streamlit as st
+deimport streamlit as st
 import pickle
 import numpy as np
 import pandas as pd
@@ -58,5 +58,5 @@ def get_similar(trail, n=5):
      #   st.text(hike_state[4])
 
 if st.button('Show Hikes'):
-    st.dataframe(get_similar(selected_trail,5))
+    st.dataframe(get_similar(selected_trail,5), hide_index=True)
    
