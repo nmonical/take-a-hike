@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import pairwise_distances
 
-trails=pickle.load('trails.pkl', 'rb')
-similarity=pickle.load('all_features.pkl', 'rb')
+trails=pickle.load(open('trails.pkl', 'rb'))
+similarity=pickle.load(open('all_features.pkl', 'rb'))
 trail_list=trails['name'].values
 
 st.header("USA Trail Recommendations")
