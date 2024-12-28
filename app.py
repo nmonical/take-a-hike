@@ -45,11 +45,11 @@ if st.button('Show Hikes'):
         st.text(hike_name[1])
         st.text(hike_state[1])
     with col3:
-        st.text(hike_name[1])
-        st.text(hike_state[1])
+        st.text(hike_name[2])
+        st.text(hike_state[2])
     with col4:
-        st.text(hike_name[1])
-        st.text(hike_state[1])
+        st.text(hike_name[3])
+        st.text(hike_state[3])
     with col5:
-        st.text(hike_name[1])
-        st.text(hike_state[1])
+        st.text(hike_name[4])
+        st.text(hike_state[4])
