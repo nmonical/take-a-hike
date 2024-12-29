@@ -7,10 +7,12 @@ from sklearn.metrics import pairwise_distances
 trails=pickle.load(open('trails.pkl', 'rb'))
 similarity=pickle.load(open('all_features.pkl', 'rb'))
 trail_list=trails['name'].values
+area_list=trails['area_name'].values
 
 st.header("USA Trail Recommendations")
 
 selected_trail = st.selectbox("Select a trail:", trail_list)
+selected_area = st.selectbox("Select an area:", area_list)
 
 import streamlit.components.v1 as components
 
@@ -31,9 +33,11 @@ def get_similar(trail, n=5):
 
     df_sim_all = pd.DataFrame(
         {"tfidf_index": indices, "similar_score": cosine_similarity})
-    
-    df_sim = df_sim_all[1:n+1]
-    return trails[['name','state_name', 'area_name', 'length', 'elevation_gain', 'difficulty_rating']].iloc[df_sim['tfidf_index']]
+    #df_sim = df_sim_all[1:n+1]
+    output = trails[['name','state_name', 'area_name', 'length', 'elevation_gain', 'difficulty_rating']].iloc[df_sim['tfidf_index']]
+    if selected_area:
+        output = output[output['area_name']==selected_area]
+    return output[1:n+1]
 
 #if st.button('Show Hikes'):
  #   hike_name, hike_state, area_name = get_similar(selected_trail, n=5)['name'].tolist(), get_similar(selected_trail, n=5)['state_name'].tolist(), get_similar(selected_trail, n=5)['area_name'].tolist()
