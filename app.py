@@ -33,7 +33,7 @@ def get_similar(trail, n=5):
         {"tfidf_index": indices, "similar_score": cosine_similarity})
     
     df_sim = df_sim_all[1:n+1]
-    return trails[['name','state_name', 'area_name', 'length', 'elevation_gain', 'difficulty']].iloc[df_sim['tfidf_index']]
+    return trails[['name','state_name', 'area_name', 'length', 'elevation_gain', 'difficulty_rating']].iloc[df_sim['tfidf_index']]
 
 #if st.button('Show Hikes'):
  #   hike_name, hike_state, area_name = get_similar(selected_trail, n=5)['name'].tolist(), get_similar(selected_trail, n=5)['state_name'].tolist(), get_similar(selected_trail, n=5)['area_name'].tolist()
