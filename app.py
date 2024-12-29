@@ -34,7 +34,7 @@ def get_similar(trail, n=5):
     df_sim_all = pd.DataFrame(
         {"tfidf_index": indices, "similar_score": cosine_similarity})
     #df_sim = df_sim_all[1:n+1]
-    output = trails[['name','state_name', 'area_name', 'length', 'elevation_gain', 'difficulty_rating']].iloc[df_sim['tfidf_index']]
+    output = trails[['name','state_name', 'area_name', 'length', 'elevation_gain', 'difficulty_rating']].iloc[df_sim_all['tfidf_index']]
     if selected_area:
         output = output[output['area_name']==selected_area]
     return output[1:n+1]
