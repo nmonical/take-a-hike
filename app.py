@@ -37,7 +37,7 @@ def get_similar(trail, n=5):
 
 if st.button('Show Hikes'):
     hike_name, hike_state, slug = get_similar(selected_trail, n=5)['name'].tolist(), get_similar(selected_trail, n=5)['state_name'].tolist(),
-    get_similar(selected_trail, n=5)['slug'].tolist(), , get_similar(selected_trail, n=5)['area_name'].tolist()
+    get_similar(selected_trail, n=5)['slug'].tolist(), get_similar(selected_trail, n=5)['area_name'].tolist()
     col0, col1, col2, col3, col4, col5 = st.columns(6)
     with col0:
         st.text('Name')
