@@ -6,7 +6,7 @@ from sklearn.metrics import pairwise_distances
 
 trails=pickle.load(open('trails.pkl', 'rb'))
 similarity=pickle.load(open('all_features.pkl', 'rb'))
-trail_list=trails['name'].values
+trail_list=trails['name_area'].values
 area_list=trails['area_name'].values
 
 st.header("USA Trail Recommendations")
@@ -21,7 +21,7 @@ def get_similar(trail, n=5):
 #idx: target item's index
 
     # 1. compute distance
-    target_feature = similarity[trails['name']==trail].reshape(1, -1)
+    target_feature = similarity[trails['name_area']==trail].reshape(1, -1)
     couple_dist = pairwise_distances(similarity,
                                      target_feature, metric='cosine')
     # 2. get similar dataframe: no need to filter out the first
