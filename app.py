@@ -65,6 +65,6 @@ def get_similar(trail, n=5):
        # st.text(area_name[4])
 
 if st.button('Show Hikes'):
-    st.dataframe(trails[['name','state_name', 'area_name', 'length', 'elevation_gain', 'difficulty_rating']].iloc[trails['name']==selected_trail])
+    st.dataframe(trails[['name','state_name', 'area_name', 'length', 'elevation_gain', 'difficulty_rating']].iloc[trails['name']==selected_trail.index[0]])
     st.dataframe(get_similar(selected_trail,5), hide_index=True)
    
