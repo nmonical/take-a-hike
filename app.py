@@ -64,7 +64,7 @@ def get_similar(trail, n=5):
       #  st.text(hike_state[4])
        # st.text(area_name[4])
 selected_df = trails[trails['name']==selected_trail]
-selected_df = selected_df[[''name','state_name', 'area_name', 'length', 'elevation_gain', 'difficulty_rating']]
+selected_df = selected_df[['name','state_name', 'area_name', 'length', 'elevation_gain', 'difficulty_rating']]
 
 if st.button('Show Hikes'):
     st.dataframe(selected_df, hide_index=True)
