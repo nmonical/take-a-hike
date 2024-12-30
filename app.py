@@ -11,7 +11,7 @@ area_list=trails['area'].unique()
 
 st.image('yosemite.jpg')
 st.header("USA Trail Recommendations")
-st.text("Looking for trail suggestions similar to trails that you have hiked before? Enter the name of a trail that you have enjoyed below to find similar trails. Add an area to filter suggestions to a particular area.)
+st.text("Looking for trail suggestions similar to trails that you have hiked before? Enter the name of a trail that you have enjoyed below to find similar trails. Add an area to filter suggestions to a particular area.")
 
 selected_trail = st.selectbox("Select a trail:", trail_list)
 selected_area = st.selectbox("Select an area (optional):", area_list, index=None)
