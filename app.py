@@ -7,12 +7,12 @@ from sklearn.metrics import pairwise_distances
 trails=pickle.load(open('trails.pkl', 'rb'))
 similarity=pickle.load(open('all_features.pkl', 'rb'))
 trail_list=trails['name_area'].values
-area_list=trails['area_name'].values
+area_list=trails['area'].unique()
 
 st.header("USA Trail Recommendations")
 
 selected_trail = st.selectbox("Select a trail:", trail_list)
-selected_area = st.selectbox("Select an area:", area_list)
+selected_area = st.selectbox("Select an area:", area_list, index=None)
 
 import streamlit.components.v1 as components
 
@@ -67,7 +67,7 @@ def get_similar(trail, n=5):
      #   st.text(hike_name[4])
       #  st.text(hike_state[4])
        # st.text(area_name[4])
-selected_df = trails[trails['name']==selected_trail]
+selected_df = trails[trails['name_area']==selected_trail]
 selected_df = selected_df[['name','state_name', 'area_name', 'length', 'elevation_gain', 'difficulty_rating']]
 
 if st.button('Show Hikes'):
