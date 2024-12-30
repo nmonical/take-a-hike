@@ -9,6 +9,9 @@ similarity=pickle.load(open('all_features.pkl', 'rb'))
 trail_list=trails['name_area'].values
 area_list=trails['area'].unique()
 
+trails['elevation_gain']=trails['elevation_gain']*3.28084
+trails['distance']=trails['distance']*0.621371
+
 st.image('yosemite.jpg')
 st.header("USA Trail Recommendations")
 st.text("Looking for trail suggestions similar to trails that you have hiked before? Enter the name of a trail that you have enjoyed below to find similar trails. Add an area to filter suggestions to a particular area.")
