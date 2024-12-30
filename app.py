@@ -51,4 +51,5 @@ selected_df = selected_df[['name','state_name', 'area_name', 'length', 'elevatio
 if st.button('Show Hikes'):
     st.dataframe(selected_df, hide_index=True)
     st.dataframe(get_similar(selected_trail,5), hide_index=True)
-   
+
+st.text("Trail data is sourced from AllTrails via j-ane (https://github.com/j-ane)")
