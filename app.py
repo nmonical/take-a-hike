@@ -9,7 +9,7 @@ similarity=pickle.load(open('all_features.pkl', 'rb'))
 trail_list=trails['name_area'].values
 area_list=trails['area'].unique()
 
-trails['elevation_gain']=trails['elevation_gain']*3.28084
+trails['elevation_gain']=round(trails['elevation_gain']*3.28084/1000,1)
 trails['length']=trails['length']*0.621371
 
 st.image('yosemite.jpg')
