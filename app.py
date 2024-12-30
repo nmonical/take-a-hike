@@ -9,10 +9,12 @@ similarity=pickle.load(open('all_features.pkl', 'rb'))
 trail_list=trails['name_area'].values
 area_list=trails['area'].unique()
 
+st.image('yosemite.jpg')
 st.header("USA Trail Recommendations")
+st.text("Looking for trail suggestions similar to trails that you have hiked before? Enter the name of a trail that you have enjoyed below to find similar trails. Add an area to filter suggestions to a particular area.)
 
 selected_trail = st.selectbox("Select a trail:", trail_list)
-selected_area = st.selectbox("Select an area:", area_list, index=None)
+selected_area = st.selectbox("Select an area (optional):", area_list, index=None)
 
 import streamlit.components.v1 as components
 
